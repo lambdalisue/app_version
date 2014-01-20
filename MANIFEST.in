@@ -1,0 +1,6 @@
+include LICENSE
+include README.rst
+include TEST.rst
+include requirements.txt
+include requirements-test.txt
+include requirements-docs.txt

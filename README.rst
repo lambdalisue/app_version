@@ -35,7 +35,7 @@ from ``__init__.py``.
 Based on `this post <http://stackoverflow.com/questions/17583443/what-is-the-correct-way-to-share-package-version-with-setup-py-and-the-package/17638236#17638236>`_, I write this tiny application for convinience.
 
 Check
-`online documentation <http://python-tolerance.readthedocs.org/en/latest/>`_
+`online documentation <http://python-app_version.readthedocs.org/en/latest/>`_
 for more details.
 
 Installation

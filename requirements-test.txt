@@ -1,3 +1,4 @@
 tolerance
 tox
 nose
+coverage

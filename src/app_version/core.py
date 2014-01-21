@@ -23,7 +23,7 @@ DEFAULT_TUPLE_NOT_FOUND = (0, 0, 0)
 
 
 def get_string_version(name, default=DEFAULT_STRING_NOT_FOUND,
-                       allow_ambiguous=False):
+                       allow_ambiguous=True):
     """
     Get string version from installed package information.
     
@@ -39,6 +39,8 @@ def get_string_version(name, default=DEFAULT_STRING_NOT_FOUND,
         installed yet
     allow_ambiguous : boolean
         ``True`` for allowing ambiguous version information.
+        Turn this argument to ``False`` if ``get_string_version`` report wrong
+        version.
 
     Returns
     --------

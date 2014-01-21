@@ -9,3 +9,11 @@ app_version Package
     :undoc-members:
     :show-inheritance:
 
+:mod:`core` Module
+------------------
+
+.. automodule:: app_version.core
+    :members:
+    :undoc-members:
+    :show-inheritance:
+

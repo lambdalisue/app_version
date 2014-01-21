@@ -17,6 +17,10 @@ def readlist(filename):
     rows = [x.strip() for x in rows if x.strip()]
     return list(rows)
 
+setup_extras = {}
+if sys.version_info > (3,):
+    setup_extras['use_2to3'] = True
+
 setup(
     name = NAME,
     version = VERSION,
@@ -48,4 +52,5 @@ setup(
     },
     zip_safe=True,
     install_requires=readlist('requirements.txt'),
+    **setup_extras
 )

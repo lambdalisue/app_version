@@ -53,7 +53,6 @@ The following code is an example ``__init__.py``.
 .. code-block:: python
 
     # coding: utf-8
-    __all__ = ('__version__', 'VERSION')
     from app_version import get_versions
     __version__, VERSION = get_versions('your app name')
     

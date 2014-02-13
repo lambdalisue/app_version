@@ -3,7 +3,7 @@ import sys
 from setuptools import setup, find_packages
 
 NAME = 'app_version'
-VERSION = '0.1.1'
+VERSION = '0.1.2'
 
 def read(filename):
     import os

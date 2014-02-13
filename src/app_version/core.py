@@ -73,7 +73,7 @@ def get_string_version(name, default=DEFAULT_STRING_NOT_FOUND,
 
 
 def get_tuple_version(name, default=DEFAULT_TUPLE_NOT_FOUND,
-                      allow_ambiguous=False):
+                      allow_ambiguous=True):
     """
     Get tuple version from installed package information for easy handling.
     
@@ -116,7 +116,7 @@ def get_tuple_version(name, default=DEFAULT_TUPLE_NOT_FOUND,
 def get_versions(name,
                  default_string=DEFAULT_STRING_NOT_FOUND,
                  default_tuple=DEFAULT_TUPLE_NOT_FOUND,
-                 allow_ambiguous=False):
+                 allow_ambiguous=True):
     """
     Get string and tuple versions from installed package information
     

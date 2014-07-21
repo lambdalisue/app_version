@@ -28,6 +28,12 @@ app_version
     :target: https://pypi.python.org/pypi/app_version/
     :alt: License
 
+Author
+    Alisue <lambdalisue@hashnote.net>
+Supported python versions
+    2.6, 2.7, 3.2, 3.3, 3.4
+
+
 Do you write the version information on ``setup.py`` and ``__init__.py``?
 This tiny application allow you to access version information of ``setup.py``
 from ``__init__.py``.

@@ -50,7 +50,7 @@ def get_string_version(name, default=DEFAULT_STRING_NOT_FOUND,
     Examples
     --------
     >>> get_string_version('app_version', allow_ambiguous=True)
-    '0.1.2'
+    '0.2.1'
     >>> get_string_version('distribution_which_is_not_installed')
     'Please install this application with setup.py'
     """
@@ -98,7 +98,7 @@ def get_tuple_version(name, default=DEFAULT_TUPLE_NOT_FOUND,
     Examples
     --------
     >>> get_tuple_version('app_version', allow_ambiguous=True)
-    (0, 1, 2)
+    (0, 2, 1)
     >>> get_tuple_version('distribution_which_is_not_installed')
     (0, 0, 0)
     """
@@ -145,9 +145,9 @@ def get_versions(name,
     --------
     >>> __version__, VERSION = get_versions('app_version', allow_ambiguous=True)
     >>> __version__
-    '0.1.2'
+    '0.2.1'
     >>> VERSION
-    (0, 1, 2)
+    (0, 2, 1)
     >>> __version__, VERSION = get_versions('distribution_which_is_not_installed')
     >>> __version__
     'Please install this application with setup.py'

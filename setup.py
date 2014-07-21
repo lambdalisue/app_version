@@ -3,7 +3,7 @@ import sys
 from setuptools import setup, find_packages
 
 NAME = 'app_version'
-VERSION = '0.1.2'
+VERSION = '0.2.0'
 
 
 def read(filename):
@@ -30,7 +30,7 @@ setup(
     description='A tiny utility to get application version from pkg_resouces',
     long_description=read('README.rst'),
     classifiers=(
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',

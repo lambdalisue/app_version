@@ -5,12 +5,14 @@ from setuptools import setup, find_packages
 NAME = 'app_version'
 VERSION = '0.1.2'
 
+
 def read(filename):
     import os
     BASE_DIR = os.path.dirname(__file__)
     filename = os.path.join(BASE_DIR, filename)
     fi = open(filename, 'r')
     return fi.read()
+
 
 def readlist(filename):
     rows = read(filename).split("\n")
@@ -21,17 +23,28 @@ setup_extras = {}
 if sys.version_info > (3,):
     setup_extras['use_2to3'] = True
 
+
 setup(
-    name = NAME,
-    version = VERSION,
-    description = 'A tiny utility to get application version from pkg_resouces',
-    long_description = read('README.rst'),
-    classifiers = (
+    name=NAME,
+    version=VERSION,
+    description='A tiny utility to get application version from pkg_resouces',
+    long_description=read('README.rst'),
+    classifiers=(
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
+        'Programming Language :: Python :: 2.3',
+        'Programming Language :: Python :: 2.4',
+        'Programming Language :: Python :: 2.5',
+        'Programming Language :: Python :: 2.6',
+        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.0',
+        'Programming Language :: Python :: 3.1',
+        'Programming Language :: Python :: 3.2',
+        'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: 3.4',
     ),
     keywords = 'application, version',
     author = 'Alisue',

@@ -26,7 +26,7 @@ def get_string_version(name, default=DEFAULT_STRING_NOT_FOUND,
                        allow_ambiguous=True):
     """
     Get string version from installed package information.
-    
+
     It will return :attr:`default` value when the named package is not
     installed.
 
@@ -60,7 +60,7 @@ def get_string_version(name, default=DEFAULT_STRING_NOT_FOUND,
         # called from doctest, find written script file
         callar = inspect.getouterframes(inspect.currentframe())[-1][1]
     # get version info from distribution
-    try: 
+    try:
         di = get_distribution(name)
         installed_directory = os.path.join(di.location, name)
         if not callar.startswith(installed_directory) and not allow_ambiguous:
@@ -76,7 +76,7 @@ def get_tuple_version(name, default=DEFAULT_TUPLE_NOT_FOUND,
                       allow_ambiguous=True):
     """
     Get tuple version from installed package information for easy handling.
-    
+
     It will return :attr:`default` value when the named package is not
     installed.
 
@@ -119,7 +119,7 @@ def get_versions(name,
                  allow_ambiguous=True):
     """
     Get string and tuple versions from installed package information
-    
+
     It will return :attr:`default_string` and :attr:`default_tuple` values when
     the named package is not installed.
 

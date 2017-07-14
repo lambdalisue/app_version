@@ -24,6 +24,7 @@ setup(
     use_scm_version=True,
     description='A tiny utility to get application version from pkg_resouces',
     long_description=read('README.rst'),
+    license='MIT',
     classifiers=(
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',

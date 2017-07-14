@@ -1,48 +1,37 @@
 app_version
 ==========================
-.. image:: https://secure.travis-ci.org/lambdalisue/app_version.png?branch=master
+.. image:: https://img.shields.io/travis/lambdalisue/app_version/master.svg?style=flat-square
     :target: http://travis-ci.org/lambdalisue/app_version
     :alt: Build status
-
-.. image:: https://coveralls.io/repos/lambdalisue/app_version/badge.png?branch=master
-    :target: https://coveralls.io/r/lambdalisue/app_version/
+.. image:: https://img.shields.io/coveralls/lambdalisue/app_version/master.svg?style=flat-square
+    :target: https://coveralls.io/github/lambdalisue/app_version?branch=master 
     :alt: Coverage
-
-.. image:: https://pypip.in/d/app_version/badge.png
-    :target: https://pypi.python.org/pypi/app_version/
-    :alt: Downloads
-
-.. image:: https://pypip.in/v/app_version/badge.png
-    :target: https://pypi.python.org/pypi/app_version/
-    :alt: Latest version
-
-.. image:: https://pypip.in/wheel/app_version/badge.png
-    :target: https://pypi.python.org/pypi/app_version/
-    :alt: Wheel Status
-
-.. image:: https://pypip.in/egg/app_version/badge.png
-    :target: https://pypi.python.org/pypi/app_version/
-    :alt: Egg Status
-
-.. image:: https://pypip.in/license/app_version/badge.png
-    :target: https://pypi.python.org/pypi/app_version/
+.. image:: https://img.shields.io/requires/github/lambdalisue/app_version/master.svg?style=flat-square
+    :target: https://requires.io/github/lambdalisue/app_version/requirements/?branch=master
+    :alt: Requirements Status
+.. image:: https://img.shields.io/pypi/v/app_version.svg?style=flat-square
+    :target: https://github.com/lambdalisue/app_version/blob/master/setup.py
+    :alt: Version
+.. image:: https://img.shields.io/pypi/l/app_version.svg?style=flat-square
+    :target: https://github.com/lambdalisue/app_version/blob/master/LICENSE
     :alt: License
-
-Author
-    Alisue <lambdalisue@hashnote.net>
-Supported python versions
-    2.6, 2.7, 3.2, 3.3, 3.4
-
+.. image:: https://img.shields.io/pypi/format/app_version.svg?style=flat-square
+    :target: https://pypi.python.org/pypi/app_version/
+    :alt: Format
+.. image:: https://img.shields.io/pypi/pyversions/app_version.svg?style=flat-square
+    :target: https://pypi.python.org/pypi/app_version/
+    :alt: Supported python versions
+.. image:: https://img.shields.io/pypi/status/app_version.svg?style=flat-square
+    :target: https://pypi.python.org/pypi/app_version/
+    :alt: Status
 
 Do you write the version information on ``setup.py`` and ``__init__.py``?
-This tiny application allow you to access version information of ``setup.py``
-from ``__init__.py``.
 
-Based on `this post <http://stackoverflow.com/questions/17583443/what-is-the-correct-way-to-share-package-version-with-setup-py-and-the-package/17638236#17638236>`_, I write this tiny application for convinience.
+This tiny application allow you to access version information of ``setup.py`` from ``__init__.py``.
 
-Check
-`online documentation <http://python-app_version.readthedocs.org/en/latest/>`_
-for more details.
+Based on `this post <http://stackoverflow.com/questions/17583443/what-is-the-correct-way-to-share-package-version-with-setup-py-and-the-package/17638236#17638236>`_, I wrote this tiny application for convinience.
+
+Check `online documentation <http://python-app_version.readthedocs.org/en/latest/>`_ for more details.
 
 Installation
 ------------
@@ -58,12 +47,10 @@ The following code is an example ``__init__.py``.
 
 .. code-block:: python
 
-    # coding: utf-8
     from app_version import get_versions
     __version__, VERSION = get_versions('your app name')
     
-Then you can access the version string with ``__version__`` and version tuple
-with ``VERSION``.
+Then you can access the version string with ``__version__`` and version tuple with ``VERSION``.
 The version tuple is useful for comparing versions like
 
 .. code-block:: python

@@ -1,3 +1,2 @@
-tolerance
 sphinx
-numpydoc
+sphinx-rtd-theme

@@ -1,4 +1,3 @@
-# coding=utf-8
 """
 app_version
 
@@ -10,19 +9,23 @@ http://stackoverflow.com/a/17638236
 
 written by Martijn Pietersp
 """
-__author__ = 'Alisue <lambdalisue@hashnote.net>'
-__all__ = ('get_string_version', 'get_tuple_version', 'get_versions')
 import os
 import inspect
 from pkg_resources import get_distribution
 from pkg_resources import DistributionNotFound
 
+__all__ = (
+    'get_string_version',
+    'get_tuple_version',
+    'get_versions',
+)
 
 DEFAULT_STRING_NOT_FOUND = 'Please install this application with setup.py'
 DEFAULT_TUPLE_NOT_FOUND = (0, 0, 0)
 
 
-def get_string_version(name, default=DEFAULT_STRING_NOT_FOUND,
+def get_string_version(name,
+                       default=DEFAULT_STRING_NOT_FOUND,
                        allow_ambiguous=True):
     """
     Get string version from installed package information.
@@ -72,7 +75,8 @@ def get_string_version(name, default=DEFAULT_STRING_NOT_FOUND,
         return di.version
 
 
-def get_tuple_version(name, default=DEFAULT_TUPLE_NOT_FOUND,
+def get_tuple_version(name,
+                      default=DEFAULT_TUPLE_NOT_FOUND,
                       allow_ambiguous=True):
     """
     Get tuple version from installed package information for easy handling.
@@ -102,7 +106,11 @@ def get_tuple_version(name, default=DEFAULT_TUPLE_NOT_FOUND,
     >>> get_tuple_version('distribution_which_is_not_installed')
     (0, 0, 0)
     """
-    from tolerance.decorators import tolerate
+    def _prefer_int(x):
+        try:
+            return int(x)
+        except ValueError:
+            return x
     version = get_string_version(name, default=default,
                                  allow_ambiguous=allow_ambiguous)
     # convert string version to tuple version
@@ -110,7 +118,7 @@ def get_tuple_version(name, default=DEFAULT_TUPLE_NOT_FOUND,
     if isinstance(version, tuple):
         # not found
         return version
-    return tuple(map(tolerate(lambda x: x)(int), version.split('.')))
+    return tuple(map(_prefer_int, version.split('.')))
 
 
 def get_versions(name,
@@ -143,16 +151,10 @@ def get_versions(name,
 
     Examples
     --------
-    >>> __version__, VERSION = get_versions('app_version', allow_ambiguous=True)
-    >>> __version__
-    '0.2.1'
-    >>> VERSION
-    (0, 2, 1)
-    >>> __version__, VERSION = get_versions('distribution_which_is_not_installed')
-    >>> __version__
-    'Please install this application with setup.py'
-    >>> VERSION
-    (0, 0, 0)
+    >>> get_versions('app_version', allow_ambiguous=True)
+    ('0.2.1', (0, 2, 1))
+    >>> get_versions('distribution_which_is_not_installed')
+    ('Please install this application with setup.py', (0, 0, 0))
     """
     version_string = get_string_version(name, default_string, allow_ambiguous)
     version_tuple = get_tuple_version(name, default_tuple, allow_ambiguous)
@@ -160,4 +162,5 @@ def get_versions(name,
 
 
 if __name__ == '__main__':
-    import doctest; doctest.testmod()
+    import doctest
+    doctest.testmod()

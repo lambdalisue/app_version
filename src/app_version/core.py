@@ -52,8 +52,10 @@ def get_string_version(name,
 
     Examples
     --------
-    >>> get_string_version('app_version', allow_ambiguous=True)
-    '0.2.1'
+    >>> import re
+    >>> v = get_string_version('app_version', allow_ambiguous=True)
+    >>> re.match('^\d+.\d+\.\d+', v) is not None
+    True
     >>> get_string_version('distribution_which_is_not_installed')
     'Please install this application with setup.py'
     """
@@ -101,8 +103,15 @@ def get_tuple_version(name,
 
     Examples
     --------
-    >>> get_tuple_version('app_version', allow_ambiguous=True)
-    (0, 2, 1)
+    >>> v = get_tuple_version('app_version', allow_ambiguous=True)
+    >>> len(v) >= 3
+    True
+    >>> isinstance(v[0], int)
+    True
+    >>> isinstance(v[1], int)
+    True
+    >>> isinstance(v[2], int)
+    True
     >>> get_tuple_version('distribution_which_is_not_installed')
     (0, 0, 0)
     """
@@ -151,8 +160,12 @@ def get_versions(name,
 
     Examples
     --------
-    >>> get_versions('app_version', allow_ambiguous=True)
-    ('0.2.1', (0, 2, 1))
+    >>> import re
+    >>> v1, v2 = get_versions('app_version', allow_ambiguous=True)
+    >>> isinstance(v1, str)
+    True
+    >>> isinstance(v2, tuple)
+    True
     >>> get_versions('distribution_which_is_not_installed')
     ('Please install this application with setup.py', (0, 0, 0))
     """
